@@ -11,6 +11,7 @@ import {
   BookOpen,
   ChevronRight,
   ChevronLeft,
+  Instagram,
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -93,7 +94,22 @@ export default function Sidebar() {
             )}
           </Link>
 
-          <nav className="mt-8 space-y-2">
+          <a
+            href="https://www.instagram.com/sealegre.imar/"
+            target="_blank"
+            rel="noreferrer"
+            title="Instagram do SEAlegre"
+            className={`
+              mt-6 flex items-center rounded-xl py-3 text-slate-300
+              hover:bg-[#164E63]/30 hover:text-[#D6B36A] transition
+              ${collapsed ? "justify-center px-0" : "gap-3 px-4"}
+            `}
+          >
+            <Instagram size={20} />
+            {!collapsed && <span>@sealegre.imar</span>}
+          </a>
+
+          <nav className="mt-6 space-y-2">
             {menu.map(([nome, link, icon]) => (
               <Link
                 key={link}

@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
@@ -13,14 +13,14 @@ import Referencias from "./pages/Referencias";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#020817] text-white overflow-hidden">
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(34,211,238,0.32),transparent_28%),radial-gradient(circle_at_85%_10%,rgba(250,204,21,0.18),transparent_25%),radial-gradient(circle_at_50%_95%,rgba(16,185,129,0.25),transparent_35%)]" />
-      <div className="fixed inset-0 bg-gradient-to-b from-[#020817]/60 via-[#061826]/90 to-[#020817]" />
+    <div className="min-h-screen bg-[#08111F] text-slate-100 overflow-hidden">
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(22,78,99,0.28),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(214,179,106,0.12),transparent_25%),linear-gradient(to_bottom,#08111F,#0B1624,#08111F)]" />
+      <div className="fixed inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:48px_48px]" />
 
-      <div className="relative z-10">
-        <Navbar />
+      <Sidebar />
 
-        <main className="max-w-7xl mx-auto px-6">
+      <div className="relative z-10 md:ml-72">
+        <main className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/historia" element={<Historia />} />

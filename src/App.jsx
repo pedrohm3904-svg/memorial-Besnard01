@@ -19,7 +19,7 @@ export default function App() {
 
       <Sidebar />
 
-      <div className="relative z-10 transition-all duration-300 md:ml-[288px]">
+     <div className="relative z-10 md:ml-24">
         <main className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
           <Routes>
             <Route path="/" element={<Home />} />

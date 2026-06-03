@@ -9,13 +9,13 @@ import {
   Anchor,
   FolderKanban,
   BookOpen,
-  PanelLeftClose,
-  PanelLeftOpen,
+  ChevronRight,
+  ChevronLeft,
 } from "lucide-react";
 
 export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const menu = [
     ["Início", "/", <House size={20} />],
@@ -29,10 +29,9 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Botão mobile */}
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
-        className="fixed top-4 right-4 z-[60] md:hidden px-4 py-3 rounded-xl bg-[#D6B36A] text-slate-950 font-black"
+        className="fixed top-4 right-4 z-[60] md:hidden px-4 py-3 rounded-xl bg-[#D6B36A] text-slate-950 font-black shadow-xl"
       >
         Menu
       </button>
@@ -50,79 +49,65 @@ export default function Sidebar() {
           bg-[#08111F]/95 backdrop-blur-xl
           border-r border-white/10
           transition-all duration-300
-
           ${collapsed ? "w-24" : "w-72"}
-
           ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0
         `}
       >
-        {/* Botão recolher */}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="hidden md:flex absolute top-5 right-4 text-slate-400 hover:text-[#D6B36A]"
+          className="hidden md:flex absolute top-6 -right-4 h-9 w-9 items-center justify-center rounded-full bg-[#0F1E2E] border border-white/10 text-[#D6B36A] hover:bg-[#164E63]/50 transition shadow-xl"
+          title={collapsed ? "Expandir menu" : "Recolher menu"}
         >
-          {collapsed ? (
-            <PanelLeftOpen size={22} />
-          ) : (
-            <PanelLeftClose size={22} />
-          )}
+          {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
         </button>
 
         <div className="p-6">
-          {/* Logos */}
-          <div className="flex items-center gap-3">
-            <img
-              src="/imagens/unifesp-logo.png"
-              alt="UNIFESP"
-              className="h-10 bg-white rounded-lg px-1"
-            />
+          <Link to="/" onClick={() => setMobileOpen(false)}>
+            <div className="flex items-center gap-3">
+              <img
+                src="/imagens/unifesp-logo.png"
+                alt="UNIFESP"
+                className="h-10 w-auto bg-white rounded-lg px-1"
+              />
+
+              {!collapsed && (
+                <img
+                  src="/imagens/sealegre-logo.png"
+                  alt="SEAlegre"
+                  className="h-10 w-10 rounded-full bg-white"
+                />
+              )}
+            </div>
 
             {!collapsed && (
-              <img
-                src="/imagens/sealegre-logo.png"
-                alt="SEAlegre"
-                className="h-10 w-10 rounded-full bg-white"
-              />
+              <div className="mt-6 border-t border-white/10 pt-4">
+                <h2 className="text-[#D6B36A] font-black text-xl">
+                  Memorial Besnard
+                </h2>
+
+                <p className="text-xs text-slate-400 mt-1">
+                  IMAR-UNIFESP • SEAlegre
+                </p>
+              </div>
             )}
-          </div>
+          </Link>
 
-          {!collapsed && (
-            <div className="mt-6 border-t border-white/10 pt-4">
-              <h2 className="text-[#D6B36A] font-black text-xl">
-                Memorial Besnard
-              </h2>
-
-              <p className="text-xs text-slate-400 mt-1">
-                IMAR-UNIFESP • SEAlegre
-              </p>
-            </div>
-          )}
-
-          {/* Menu */}
           <nav className="mt-8 space-y-2">
             {menu.map(([nome, link, icon]) => (
               <Link
                 key={link}
                 to={link}
                 onClick={() => setMobileOpen(false)}
-                className="
-                  flex items-center gap-3
-                  rounded-xl
-                  px-4 py-3
-                  text-slate-300
-                  hover:bg-[#164E63]/30
-                  hover:text-[#D6B36A]
-                  transition
-                "
+                title={collapsed ? nome : ""}
+                className={`
+                  flex items-center rounded-xl py-3 text-slate-300
+                  hover:bg-[#164E63]/30 hover:text-[#D6B36A] transition
+                  ${collapsed ? "justify-center px-0" : "gap-3 px-4"}
+                `}
               >
                 {icon}
-
-                {!collapsed && (
-                  <span>
-                    {nome}
-                  </span>
-                )}
+                {!collapsed && <span>{nome}</span>}
               </Link>
             ))}
           </nav>

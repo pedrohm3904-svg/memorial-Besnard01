@@ -23,6 +23,7 @@ export default function Footer() {
             <Link to="/legado" className="hover:text-[#D6B36A]">Legado</Link>
             <Link to="/sobre" className="hover:text-[#D6B36A]">Projeto</Link>
             <Link to="/referencias" className="hover:text-[#D6B36A]">Referências</Link>
+            <Link to="/expedicoes" className="hover:text-[#D6B36A]">Expedições</Link>
           </div>
 
           <div className="max-w-sm">

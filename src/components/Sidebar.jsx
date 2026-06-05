@@ -12,6 +12,7 @@ import {
   ChevronRight,
   ChevronLeft,
   Instagram,
+  Map,
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -26,6 +27,7 @@ export default function Sidebar() {
     ["Legado", "/legado", <Anchor size={20} />],
     ["Projeto", "/sobre", <FolderKanban size={20} />],
     ["Referências", "/referencias", <BookOpen size={20} />],
+    ["Expedições", "/expedicoes", <Map size={20} />],
   ];
 
   return (

@@ -1,6 +1,11 @@
 export default function Referencias() {
   const links = [
     {
+      title: "Documentário USP",
+      text: "Besnard: histórias de um navio oceanográfico",
+      url: "https://www.youtube.com/watch?v=BABF6sh2Qq8",
+    },
+    {
       title: "Mar Sem Fim",
       text: "A saga do navio oceanográfico Prof. W. Besnard",
       url: "https://marsemfim.com.br/a-saga-do-navio-oceanografico-prof-w-besnard-tera-final-feliz/",
@@ -29,7 +34,7 @@ export default function Referencias() {
 
   return (
     <section className="py-16">
-      <h1 className="text-5xl font-black text-cyan-200 mb-8">
+      <h1 className="text-5xl font-black text-[#D6B36A] mb-8">
         Referências
       </h1>
 
@@ -40,9 +45,9 @@ export default function Referencias() {
             href={link.url}
             target="_blank"
             rel="noreferrer"
-            className="rounded-2xl bg-black/25 border border-cyan-200/20 p-5 hover:bg-cyan-300/10 hover:-translate-y-1 transition"
+            className="rounded-2xl bg-[#0F1E2E]/70 border border-white/10 p-5 hover:bg-[#164E63]/25 hover:-translate-y-1 transition"
           >
-            <h2 className="text-cyan-200 font-black">{link.title}</h2>
+            <h2 className="text-[#D6B36A] font-black">{link.title}</h2>
             <p className="text-slate-300 mt-1">{link.text}</p>
           </a>
         ))}

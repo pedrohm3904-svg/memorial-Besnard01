@@ -245,7 +245,7 @@ const memoria = [
     periodo: "2016",
     titulo: "Besnard: histórias de um navio oceanográfico",
     texto:
-      "O documentário reuniu imagens e vozes que hoje são parte do acervo audiovisual da própria memória do navio.",
+      "O documentário reuniu imagens e vozes que hoje são parte do acervo audiovisual da própria memória do navio. O acesso ao filme fica concentrado aqui, sem repetição em outras seções da página.",
     fontes: ["documentario"],
   },
   {
@@ -302,33 +302,10 @@ function FonteChip({ id }) {
       className="inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-bold text-cyan-100 transition hover:-translate-y-0.5 hover:bg-cyan-300/20"
     >
       <span className="h-1.5 w-1.5 rounded-full bg-cyan-200" />
-      {fonte.instituicao}
+      {["yapery", "marta", "valdenir", "documentario"].includes(id)
+        ? fonte.titulo
+        : fonte.instituicao}
       <span aria-hidden="true">↗</span>
-    </a>
-  );
-}
-
-function FonteCard({ fonte }) {
-  return (
-    <a
-      href={fonte.url}
-      target="_blank"
-      rel="noreferrer"
-      className="group rounded-2xl border border-white/10 bg-black/20 p-5 transition hover:-translate-y-1 hover:border-cyan-200/30 hover:bg-cyan-300/10"
-    >
-      <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">
-        {fonte.tipo}
-      </p>
-      <div className="mt-2 flex items-start justify-between gap-4">
-        <h3 className="font-black text-white">{fonte.instituicao}</h3>
-        <span className="text-cyan-200 transition group-hover:translate-x-1 group-hover:-translate-y-1">
-          ↗
-        </span>
-      </div>
-      <p className="mt-2 text-sm font-bold text-slate-200">{fonte.titulo}</p>
-      <p className="mt-3 text-sm leading-6 text-slate-400">
-        {fonte.descricao}
-      </p>
     </a>
   );
 }
@@ -724,42 +701,6 @@ export default function Legado() {
           </div>
         </section>
 
-        {/* DOCUMENTÁRIO */}
-        <section className="mx-auto max-w-7xl px-6 py-16">
-          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-200">
-                Patrimônio audiovisual
-              </p>
-              <h2 className="mt-3 text-4xl font-black text-white">
-                Memória com voz, rosto e hesitação
-              </h2>
-              <p className="mt-5 leading-7 text-slate-300">
-                Entrevistas preservam coisas que uma tabela não registra:
-                pronúncias, lembranças, conflitos de memória, humor, medo,
-                orgulho e a maneira como pessoas diferentes interpretaram o
-                mesmo navio.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                O documentário é apresentado como obra do IOUSP e permanece
-                hospedado em sua fonte original. O Memorial Digital funciona
-                como ponte, não como apropriação do material.
-              </p>
-            </div>
-
-            <div className="aspect-video overflow-hidden rounded-[2rem] border border-white/15 bg-black shadow-2xl">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube-nocookie.com/embed/BABF6sh2Qq8"
-                title="Besnard: histórias de um navio oceanográfico"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </section>
-
         {/* FUTURO DO MEMORIAL */}
         <section className="border-y border-cyan-200/10 bg-cyan-300/[0.035]">
           <div className="mx-auto max-w-7xl px-6 py-16">
@@ -821,30 +762,28 @@ export default function Legado() {
           </div>
         </section>
 
-        {/* FONTES */}
-        <section className="border-t border-white/10 bg-black/15">
-          <div className="mx-auto max-w-7xl px-6 py-16">
-            <div className="max-w-4xl">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
-                Fontes
+        {/* REFERÊNCIAS CENTRALIZADAS */}
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <div className="flex flex-col gap-5 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-yellow-100">
+                Documentação
               </p>
-              <h2 className="mt-3 text-4xl font-black text-white md:text-5xl">
-                O legado precisa ser rastreável
+              <h2 className="mt-2 text-2xl font-black text-white">
+                Fontes, entrevistas e acervos em um só lugar
               </h2>
-              <p className="mt-5 leading-7 text-slate-300">
-                Esta página interpreta o legado do Besnard a partir de fontes
-                institucionais, documentação de projetos de memória,
-                reportagens científicas e arquivos audiovisuais. A interpretação
-                é do Memorial; as fontes permanecem identificadas para que o
-                visitante possa conferir e aprofundar a leitura.
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
+                Os links essenciais permanecem junto aos trechos em que são
+                usados. A relação completa foi centralizada na aba Referências,
+                evitando repetir dezenas de cartões no final desta página.
               </p>
             </div>
-
-            <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {fontes.map((fonte) => (
-                <FonteCard key={fonte.id} fonte={fonte} />
-              ))}
-            </div>
+            <a
+              href="/referencias"
+              className="shrink-0 rounded-2xl border border-yellow-100/20 bg-yellow-200/10 px-6 py-3 text-center font-black text-yellow-100 transition hover:bg-yellow-200/20"
+            >
+              Ver todas as referências →
+            </a>
           </div>
         </section>
 

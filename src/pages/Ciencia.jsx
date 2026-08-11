@@ -8,7 +8,7 @@ const fontes = [
     titulo: "Cruzeiros e Projetos — N/Oc Prof. W. Besnard",
     descricao:
       "Base institucional que reúne os cruzeiros do Besnard e contextualiza os principais programas científicos desenvolvidos com a embarcação.",
-    url: "https://www.io.usp.br/index.php/embarcacoes/n-oc-prof-w-besnard/cruzeiros-e-projetos.html",
+    url: "/documentos/cruzeiros-oceanograficos-besnard.pdf",
   },
   {
     id: "fisica-io",
@@ -63,60 +63,6 @@ const fontes = [
     descricao:
       "Apresenta resultados e a abordagem integrada dos estudos oceanográficos na plataforma interna de São Sebastião.",
     url: "https://revistapesquisa.fapesp.br/o-mar-de-sao-sebastiao/",
-  },
-  {
-    id: "memoria-prceu",
-    tipo: "Projeto de extensão e memória",
-    instituicao: "PRCEU / Universidade de São Paulo",
-    titulo: "Catálogo 2013–2014",
-    descricao:
-      "Registra projetos anteriores voltados à memória audiovisual do IOUSP e à trajetória do Besnard até o Alpha Crucis.",
-    url: "https://prceu.usp.br/wp-content/uploads/2021/09/2013-2014_Catalogo.pdf",
-  },
-  {
-    id: "documentario",
-    tipo: "Arquivo audiovisual",
-    instituicao: "Instituto Oceanográfico da USP",
-    titulo: "Besnard: histórias de um navio oceanográfico",
-    descricao:
-      "Documentário de 2016 construído a partir de memória institucional, registros históricos e depoimentos.",
-    url: "https://www.youtube.com/watch?v=BABF6sh2Qq8",
-  },
-  {
-    id: "yapery",
-    tipo: "História oral",
-    instituicao: "Instituto Oceanográfico da USP",
-    titulo: "Yapery Tupiassu de Britto Guerra — entrevista de 2004",
-    descricao:
-      "Depoimento sobre a criação, construção, problemas e relevância do N/Oc Prof. W. Besnard.",
-    url: "https://www.youtube.com/watch?v=wTHj7Y7SkJ4",
-  },
-  {
-    id: "marta",
-    tipo: "História oral",
-    instituicao: "Instituto Oceanográfico da USP",
-    titulo: "Marta Vannucci — entrevista de 2004",
-    descricao:
-      "Registro audiovisual relacionado à memória institucional do Instituto Oceanográfico.",
-    url: "https://www.youtube.com/watch?v=XRwc5_0djPo",
-  },
-  {
-    id: "valdenir",
-    tipo: "História oral",
-    instituicao: "Instituto Oceanográfico da USP",
-    titulo: "Valdenir Veronese Furtado — entrevista de 2006",
-    descricao:
-      "Depoimento preservado pelo IOUSP sobre a trajetória da pesquisa oceanográfica e da embarcação.",
-    url: "https://www.youtube.com/watch?v=61D3Xbe8Edo",
-  },
-  {
-    id: "expedicoes-video",
-    tipo: "Arquivo audiovisual",
-    instituicao: "Instituto Oceanográfico da USP",
-    titulo: "Expedições oceanográficas do N/Oc Prof. W. Besnard",
-    descricao:
-      "Recorte audiovisual do documentário de 2016 dedicado às campanhas oceanográficas da embarcação.",
-    url: "https://www.youtube.com/watch?v=oYFwfQ16PjY",
   },
   {
     id: "paralarvas",
@@ -578,44 +524,6 @@ const regioes = [
     texto:
       "Seis campanhas do PROANTAR conectaram a pesquisa universitária a um dos maiores projetos científicos e geopolíticos brasileiros no mar.",
     projetos: ["PROANTAR I–VI"],
-  },
-];
-
-const memoriaAnterior = [
-  {
-    ano: "2004–2006",
-    titulo: "História oral antes do documentário",
-    texto:
-      "O IOUSP preservou entrevistas com personagens centrais de sua trajetória. Entre elas estão registros de Yapery Tupiassu de Britto Guerra, Marta Vannucci e Valdenir Veronese Furtado.",
-    fontes: ["yapery", "marta", "valdenir"],
-  },
-  {
-    ano: "2013–2014",
-    titulo: "Contribuição à Construção da Memória Audiovisual do IOUSP",
-    texto:
-      "Projeto registrado pela PRCEU previa consultar arquivos científicos, administrativos e visuais, além dos diários de bordo e de navegação, filmar depoimentos, transcrevê-los e produzir livro e documentário.",
-    fontes: ["memoria-prceu"],
-  },
-  {
-    ano: "2013–2014",
-    titulo: "Resgatando História e Ciência: Besnard a Alpha Crucis",
-    texto:
-      "Projeto coordenado por Sueli Susana de Godoi propôs condensar em linguagem acessível a passagem histórica do Besnard ao Moana Wave/Alpha Crucis, com previsão de cartilha científica e/ou documentário.",
-    fontes: ["memoria-prceu"],
-  },
-  {
-    ano: "2016",
-    titulo: "Besnard: histórias de um navio oceanográfico",
-    texto:
-      "O documentário disponível publicamente reúne uma camada audiovisual de memória que este memorial não pretende substituir. Aqui ele é tratado como fonte e patrimônio, com crédito e acesso ao original.",
-    fontes: ["documentario", "expedicoes-video"],
-  },
-  {
-    ano: "2026",
-    titulo: "Memorial Digital",
-    texto:
-      "Este projeto parte de uma geração posterior: organiza fontes dispersas, estrutura o catálogo de cruzeiros, explicita lacunas documentais e conecta memória do navio, ciência produzida e continuidade institucional.",
-    fontes: [],
   },
 ];
 
@@ -2480,29 +2388,6 @@ function FonteChip({ id }) {
   );
 }
 
-function FonteCard({ fonte }) {
-  return (
-    <a
-      href={fonte.url}
-      target="_blank"
-      rel="noreferrer"
-      className="group rounded-2xl border border-white/10 bg-black/20 p-5 transition hover:-translate-y-1 hover:border-cyan-200/30 hover:bg-cyan-300/10"
-    >
-      <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">
-        {fonte.tipo}
-      </p>
-      <div className="mt-2 flex items-start justify-between gap-4">
-        <h3 className="font-black text-white">{fonte.instituicao}</h3>
-        <span className="text-cyan-200 transition group-hover:translate-x-1 group-hover:-translate-y-1">
-          ↗
-        </span>
-      </div>
-      <p className="mt-2 text-sm font-bold text-slate-200">{fonte.titulo}</p>
-      <p className="mt-3 text-sm leading-6 text-slate-400">{fonte.descricao}</p>
-    </a>
-  );
-}
-
 function ProjetoCard({ projeto }) {
   const cores = {
     cyan: "border-cyan-200/20 bg-cyan-300/[0.06]",
@@ -2886,12 +2771,12 @@ export default function Ciencia() {
                 {cruzeirosFiltrados.length === 1 ? "" : "s"}
               </p>
               <a
-                href="https://www.io.usp.br/index.php/embarcacoes/n-oc-prof-w-besnard/cruzeiros-e-projetos.html"
+                href="/documentos/cruzeiros-oceanograficos-besnard.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-bold text-slate-400 underline decoration-white/20 underline-offset-4 hover:text-cyan-200"
+                className="inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-300/10 px-4 py-2 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/20"
               >
-                Consultar fonte institucional ↗
+                Abrir PDF original dos cruzeiros ↗
               </a>
             </div>
 
@@ -3084,99 +2969,6 @@ export default function Ciencia() {
           </div>
         </section>
 
-        {/* MEMÓRIA ANTERIOR */}
-        <section className="border-y border-white/10 bg-white/[0.025]">
-          <div className="mx-auto max-w-7xl px-6 py-16">
-            <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
-                  Memórias antes deste memorial
-                </p>
-                <h2 className="mt-3 text-4xl font-black text-white md:text-5xl">
-                  Este projeto não começa do zero
-                </h2>
-                <p className="mt-5 leading-7 text-slate-300">
-                  A USP já desenvolveu iniciativas de memória oral,
-                  audiovisual e científica sobre o Besnard. Em vez de copiar
-                  esses trabalhos, o Memorial Digital os reconhece como parte
-                  da própria história da preservação e cria uma nova camada de
-                  organização e acesso.
-                </p>
-
-                <a
-                  href="https://www.youtube.com/watch?v=BABF6sh2Qq8"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-block rounded-2xl bg-gradient-to-r from-cyan-300 to-emerald-300 px-6 py-3 font-black text-slate-950 transition hover:scale-[1.02]"
-                >
-                  Assistir ao documentário de 2016 ↗
-                </a>
-              </div>
-
-              <div className="space-y-4">
-                {memoriaAnterior.map((item) => (
-                  <div
-                    key={`${item.ano}-${item.titulo}`}
-                    className="rounded-[1.75rem] border border-white/10 bg-black/20 p-6"
-                  >
-                    <p className="text-sm font-black text-yellow-100">
-                      {item.ano}
-                    </p>
-                    <h3 className="mt-2 text-xl font-black text-white">
-                      {item.titulo}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-400">
-                      {item.texto}
-                    </p>
-                    {item.fontes.length > 0 && (
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        {item.fontes.map((fonte) => (
-                          <FonteChip key={fonte} id={fonte} />
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* DOCUMENTÁRIO EMBED */}
-        <section className="mx-auto max-w-7xl px-6 py-16">
-          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-200">
-                Arquivo audiovisual
-              </p>
-              <h2 className="mt-3 text-4xl font-black text-white">
-                Ouvir quem esteve lá
-              </h2>
-              <p className="mt-5 leading-7 text-slate-300">
-                Cronologias e tabelas mostram estrutura; depoimentos mostram
-                experiência. O documentário de 2016 é preservado aqui como
-                acesso ao trabalho anterior do IOUSP e como porta de entrada
-                para as vozes que viveram o navio.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-500">
-                Todo o conteúdo audiovisual permanece creditado aos seus
-                produtores e hospedado em sua fonte original.
-              </p>
-            </div>
-
-            <div className="aspect-video overflow-hidden rounded-[2rem] border border-white/15 bg-black shadow-2xl">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube-nocookie.com/embed/BABF6sh2Qq8"
-                title="Besnard: histórias de um navio oceanográfico"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </section>
-
         {/* PONTE PARA LEGADO */}
         <section className="mx-auto max-w-7xl px-6 pb-16">
           <div className="rounded-[2rem] border border-cyan-200/15 bg-gradient-to-r from-cyan-300/10 via-emerald-300/[0.08] to-yellow-200/[0.06] p-8 md:p-10">
@@ -3203,41 +2995,28 @@ export default function Ciencia() {
           </div>
         </section>
 
-        {/* FONTES */}
-        <section
-          id="fontes-ciencia"
-          className="border-t border-white/10 bg-black/15"
-        >
-          <div className="mx-auto max-w-7xl px-6 py-16">
-            <div className="max-w-4xl">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
-                Curadoria
+        {/* REFERÊNCIAS CENTRALIZADAS */}
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <div className="flex flex-col gap-5 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
+                Documentação
               </p>
-              <h2 className="mt-3 text-4xl font-black text-white md:text-5xl">
-                Fontes e método
+              <h2 className="mt-2 text-2xl font-black text-white">
+                Quer conferir todas as fontes desta página?
               </h2>
-              <p className="mt-5 leading-7 text-slate-300">
-                Esta página combina o catálogo histórico de cruzeiros,
-                documentação institucional, páginas de programas nacionais,
-                memória audiovisual e publicações científicas. Os textos foram
-                redigidos especificamente para este memorial: fontes anteriores
-                são sintetizadas, creditadas e ligadas ao original, sem copiar
-                seus textos como se fossem conteúdo próprio.
-              </p>
-              <p className="mt-4 leading-7 text-slate-400">
-                O banco de 263 registros foi reconstruído a partir do catálogo
-                "Prof. W. Besnard – 40 anos de navio ao mar". Ele deve ser
-                tratado como uma camada de acesso, não como substituto dos
-                diários de bordo. Grafias, nomes e linhas ambíguas ainda podem
-                ser refinados quando os documentos originais forem consultados.
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
+                As referências completas do Memorial estão reunidas na aba
+                Referências. Aqui permanecem apenas os links diretamente úteis
+                para o projeto, documento ou dado citado no texto.
               </p>
             </div>
-
-            <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {fontes.map((fonte) => (
-                <FonteCard key={fonte.id} fonte={fonte} />
-              ))}
-            </div>
+            <a
+              href="/referencias"
+              className="shrink-0 rounded-2xl border border-cyan-200/20 bg-cyan-300/10 px-6 py-3 text-center font-black text-cyan-100 transition hover:bg-cyan-300/20"
+            >
+              Ver todas as referências →
+            </a>
           </div>
         </section>
 

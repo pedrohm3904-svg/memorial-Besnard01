@@ -10,7 +10,6 @@ import Galeria from "./pages/Galeria";
 import Legado from "./pages/Legado";
 import SobreProjeto from "./pages/SobreProjeto";
 import Referencias from "./pages/Referencias";
-import Expedicoes from "./pages/Expedicoes";
 
 export default function App() {
   return (
@@ -30,7 +29,6 @@ export default function App() {
             <Route path="/legado" element={<Legado />} />
             <Route path="/sobre" element={<SobreProjeto />} />
             <Route path="/referencias" element={<Referencias />} />
-            <Route path="/expedicoes" element={<Expedicoes />} />
           </Routes>
         </main>
 

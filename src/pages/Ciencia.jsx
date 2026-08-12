@@ -2516,30 +2516,30 @@ export default function Ciencia() {
   const exibidos = cruzeirosFiltrados.slice(0, mostrar);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#020817] text-white">
+    <main className="relative isolate min-h-screen overflow-hidden bg-[#020817] text-white">
       {/* FUNDO */}
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(34,211,238,0.20),transparent_28%),radial-gradient(circle_at_90%_18%,rgba(16,185,129,0.15),transparent_26%),radial-gradient(circle_at_50%_90%,rgba(250,204,21,0.08),transparent_34%)]" />
-      <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-[#020817]/30 via-[#061826]/85 to-[#020817]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_10%_10%,rgba(34,211,238,0.20),transparent_28%),radial-gradient(circle_at_90%_18%,rgba(16,185,129,0.15),transparent_26%),radial-gradient(circle_at_50%_90%,rgba(250,204,21,0.08),transparent_34%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[#020817]/30 via-[#061826]/85 to-[#020817]" />
 
       <div className="relative z-10">
         {/* HERO */}
         <header className="border-b border-white/10">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-end md:py-28">
-            <div>
-              <div className="flex flex-wrap gap-3">
-                <span className="rounded-full border border-emerald-200/25 bg-emerald-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
-                  Ciência e Pesquisa
-                </span>
-                <span className="rounded-full border border-cyan-200/20 bg-cyan-300/10 px-4 py-2 text-xs font-bold text-cyan-100">
-                  1967–2006
-                </span>
-              </div>
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+            <div className="flex flex-wrap gap-3">
+              <span className="rounded-full border border-emerald-200/25 bg-emerald-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-emerald-100">
+                Ciência e Pesquisa
+              </span>
+              <span className="rounded-full border border-cyan-200/20 bg-cyan-300/10 px-4 py-2 text-xs font-bold text-cyan-100">
+                1967–2006
+              </span>
+            </div>
 
-              <h1 className="mt-7 max-w-5xl text-5xl font-black leading-[0.98] text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-emerald-200 to-yellow-100 md:text-7xl">
-                Do navio ao conhecimento
-              </h1>
+            <h1 className="mt-7 max-w-6xl text-5xl font-black leading-[0.98] text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-emerald-200 to-yellow-100 md:text-7xl">
+              Do navio ao conhecimento
+            </h1>
 
-              <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-200 md:text-xl md:leading-9">
+            <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:gap-12">
+              <p className="text-lg leading-8 text-slate-200 md:text-xl md:leading-9">
                 O Prof. W. Besnard não transportava apenas pesquisadores. Ele
                 transformava perguntas em estações oceanográficas, estações em
                 amostras e séries de dados, e essas evidências em conhecimento
@@ -2547,7 +2547,7 @@ export default function Ciencia() {
                 poluição e recursos do mar.
               </p>
 
-              <p className="mt-5 max-w-3xl leading-7 text-slate-400">
+              <p className="leading-7 text-slate-400 lg:pt-1">
                 Esta página reconstrói os principais programas científicos da
                 embarcação e abre o catálogo histórico de cruzeiros à
                 exploração. Quando a expansão de uma sigla ou a finalidade de

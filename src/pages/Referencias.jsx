@@ -405,9 +405,9 @@ export default function Referencias() {
   }, [busca, eixo]);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#020817] text-white">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_12%_12%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_88%_14%,rgba(250,204,21,0.09),transparent_27%),radial-gradient(circle_at_50%_92%,rgba(16,185,129,0.15),transparent_34%)]" />
-      <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-[#020817]/30 via-[#061826]/85 to-[#020817]" />
+    <main className="relative isolate min-h-screen overflow-hidden bg-[#020817] text-white">
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_12%_12%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_88%_14%,rgba(250,204,21,0.09),transparent_27%),radial-gradient(circle_at_50%_92%,rgba(16,185,129,0.15),transparent_34%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[#020817]/30 via-[#061826]/85 to-[#020817]" />
 
       <div className="relative z-10">
         <header className="border-b border-white/10">

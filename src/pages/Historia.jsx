@@ -607,11 +607,11 @@ export default function Historia() {
   return (
     <main
       id="historia"
-      className="relative min-h-screen overflow-hidden bg-[#020817] text-white"
+      className="relative isolate min-h-screen overflow-hidden bg-[#020817] text-white"
     >
       {/* FUNDO */}
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(34,211,238,0.20),transparent_30%),radial-gradient(circle_at_88%_18%,rgba(16,185,129,0.14),transparent_28%),radial-gradient(circle_at_50%_90%,rgba(250,204,21,0.09),transparent_32%)]" />
-      <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-[#020817]/30 via-[#061826]/80 to-[#020817]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_15%_10%,rgba(34,211,238,0.20),transparent_30%),radial-gradient(circle_at_88%_18%,rgba(16,185,129,0.14),transparent_28%),radial-gradient(circle_at_50%_90%,rgba(250,204,21,0.09),transparent_32%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[#020817]/30 via-[#061826]/80 to-[#020817]" />
 
       <div className="relative z-10">
         {/* HERO */}

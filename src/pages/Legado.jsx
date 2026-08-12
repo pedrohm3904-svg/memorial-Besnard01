@@ -312,31 +312,29 @@ function FonteChip({ id }) {
 
 export default function Legado() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#020817] text-white">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(250,204,21,0.10),transparent_28%),radial-gradient(circle_at_88%_18%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_50%_90%,rgba(16,185,129,0.16),transparent_34%)]" />
-      <div className="pointer-events-none fixed inset-0 bg-gradient-to-b from-[#020817]/30 via-[#061826]/85 to-[#020817]" />
+    <main className="relative isolate min-h-screen overflow-hidden bg-[#020817] text-white">
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_12%_10%,rgba(250,204,21,0.10),transparent_28%),radial-gradient(circle_at_88%_18%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_50%_90%,rgba(16,185,129,0.16),transparent_34%)]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[#020817]/30 via-[#061826]/85 to-[#020817]" />
 
       <div className="relative z-10">
         {/* HERO */}
         <header className="border-b border-white/10">
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-end md:py-28">
-            <div>
-              <span className="inline-block rounded-full border border-yellow-100/20 bg-yellow-200/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-yellow-100">
-                Legado
-              </span>
+          <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+            <span className="inline-block rounded-full border border-yellow-100/20 bg-yellow-200/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-yellow-100">
+              Legado
+            </span>
 
-              <h1 className="mt-7 max-w-5xl text-5xl font-black leading-[0.98] text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 via-emerald-200 to-cyan-200 md:text-7xl">
-                O que permanece quando um navio deixa de navegar?
-              </h1>
+            <h1 className="mt-7 max-w-6xl text-5xl font-black leading-[0.98] text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 via-emerald-200 to-cyan-200 md:text-7xl">
+              O que permanece quando um navio deixa de navegar?
+            </h1>
 
-              <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-200 md:text-xl md:leading-9">
-                Um navio pode perder seus motores, sair de operação e até
-                desaparecer como infraestrutura ativa. Mas décadas de ciência
-                não cabem dentro de um casco. Elas continuam em pessoas,
-                coleções, objetos, instituições, políticas, novas embarcações e
-                perguntas que ainda podem ser feitas aos dados do passado.
-              </p>
-            </div>
+            <p className="mt-8 max-w-5xl text-lg leading-8 text-slate-200 md:text-xl md:leading-9">
+              Um navio pode perder seus motores, sair de operação e até
+              desaparecer como infraestrutura ativa. Mas décadas de ciência
+              não cabem dentro de um casco. Elas continuam em pessoas,
+              coleções, objetos, instituições, políticas, novas embarcações e
+              perguntas que ainda podem ser feitas aos dados do passado.
+            </p>
           </div>
         </header>
 

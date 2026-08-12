@@ -566,19 +566,6 @@ export default function Referencias() {
             </div>
           </div>
         </section>
-
-        <footer className="border-t border-white/10">
-          <div className="mx-auto max-w-7xl px-6 py-12">
-            <p className="max-w-4xl text-2xl font-black leading-tight text-white">
-              Um memorial confiável não pede que o visitante acredite nele: ele
-              mostra onde a informação pode ser conferida.
-            </p>
-            <p className="mt-4 text-sm text-slate-500">
-              Memorial do N/Oc Prof. Wladimir Besnard • Referências • atualizado
-              em agosto de 2026
-            </p>
-          </div>
-        </footer>
       </div>
     </main>
   );

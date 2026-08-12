@@ -64,15 +64,6 @@ const fontes = [
       "Apresenta resultados e a abordagem integrada dos estudos oceanográficos na plataforma interna de São Sebastião.",
     url: "https://revistapesquisa.fapesp.br/o-mar-de-sao-sebastiao/",
   },
-  {
-    id: "paralarvas",
-    tipo: "Exemplo de reuso científico",
-    instituicao: "LabPesq / IOUSP",
-    titulo: "Dados históricos de campanhas do Besnard em estudo posterior",
-    descricao:
-      "Exemplo de publicação que reuniu amostragens históricas de diferentes campanhas, incluindo séries obtidas pelo Prof. W. Besnard.",
-    url: "https://www.labpesq.io.usp.br/images/publicacoes/Araujo_and_Gasalla_2018_Fisheries_Oceanography.pdf",
-  },
 ];
 
 const numeros = [
@@ -2565,23 +2556,6 @@ export default function Ciencia() {
                 completar a história por suposição.
               </p>
             </div>
-
-            <div className="rounded-[2rem] border border-white/15 bg-white/[0.07] p-7 shadow-2xl backdrop-blur-xl">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-yellow-100">
-                Ideia central
-              </p>
-              <p className="mt-4 text-2xl font-black leading-tight text-white">
-                Um navio de pesquisa é uma infraestrutura de produção de
-                evidências.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-300">
-                Sem acesso ao ponto de coleta, à profundidade, aos
-                instrumentos, ao tempo de mar e à repetição das estações,
-                muitas perguntas oceanográficas simplesmente não podem ser
-                respondidas. O Besnard criou esse acesso durante quatro
-                décadas.
-              </p>
-            </div>
           </div>
         </header>
 
@@ -2963,9 +2937,6 @@ export default function Ciencia() {
               históricas obtidas a bordo do Besnard com material de outras
               embarcações.
             </p>
-            <div className="mt-6">
-              <FonteChip id="paralarvas" />
-            </div>
           </div>
         </section>
 
@@ -2986,53 +2957,8 @@ export default function Ciencia() {
               a outra geração tecnológica, mas existem dentro de uma história
               institucional que o Besnard ajudou a construir.
             </p>
-            <a
-              href="/legado"
-              className="mt-7 inline-block rounded-2xl border border-yellow-100/20 bg-yellow-200/10 px-6 py-3 font-black text-yellow-100 transition hover:bg-yellow-200/20"
-            >
-              Continuar para Legado →
-            </a>
           </div>
         </section>
-
-        {/* REFERÊNCIAS CENTRALIZADAS */}
-        <section className="mx-auto max-w-7xl px-6 pb-16">
-          <div className="flex flex-col gap-5 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-                Documentação
-              </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
-                Quer conferir todas as fontes desta página?
-              </h2>
-              <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-                As referências completas do Memorial estão reunidas na aba
-                Referências. Aqui permanecem apenas os links diretamente úteis
-                para o projeto, documento ou dado citado no texto.
-              </p>
-            </div>
-            <a
-              href="/referencias"
-              className="shrink-0 rounded-2xl border border-cyan-200/20 bg-cyan-300/10 px-6 py-3 text-center font-black text-cyan-100 transition hover:bg-cyan-300/20"
-            >
-              Ver todas as referências →
-            </a>
-          </div>
-        </section>
-
-        <footer className="border-t border-white/10">
-          <div className="mx-auto max-w-7xl px-6 py-12">
-            <p className="max-w-4xl text-2xl font-black leading-tight text-white">
-              Cada linha do catálogo representa dias de trabalho no mar. Cada
-              amostra preservada representa uma pergunta que ainda pode ser
-              refeita.
-            </p>
-            <p className="mt-4 text-sm text-slate-500">
-              Memorial do N/Oc Prof. Wladimir Besnard • Ciência e Pesquisa •
-              versão de trabalho atualizada em agosto de 2026
-            </p>
-          </div>
-        </footer>
       </div>
     </main>
   );

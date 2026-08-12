@@ -48,10 +48,10 @@ const fontes = [
     id: "memoria-prceu",
     tipo: "Projeto de memória",
     instituicao: "PRCEU / Universidade de São Paulo",
-    titulo: "Catálogo de projetos 2013–2014",
+    titulo: "Catálogo de projetos 2013–2014 — p. 240",
     descricao:
-      "Registra projetos voltados à memória audiovisual do IOUSP e à trajetória Besnard–Moana Wave–Alpha Crucis.",
-    url: "https://prceu.usp.br/wp-content/uploads/2021/09/2013-2014_Catalogo.pdf",
+      "Na página 240 estão os projetos sobre memória audiovisual do IOUSP e a trajetória Besnard–Moana Wave–Alpha Crucis.",
+    url: "https://prceu.usp.br/wp-content/uploads/2021/09/2013-2014_Catalogo.pdf#page=240",
   },
   {
     id: "documentario",
@@ -231,7 +231,7 @@ const memoria = [
     periodo: "2013–2014",
     titulo: "Memória audiovisual do IOUSP",
     texto:
-      "Um projeto da PRCEU propôs consultar arquivos científicos, textuais, administrativos e visuais, inclusive diários de bordo e navegação, para produzir registros audiovisuais, transcrições, livro e documentário.",
+      "Na página 240 do catálogo Projetos 2013–2014 da PRCEU/USP, o projeto ‘Contribuição à Construção da Memória Audiovisual (Científica e Tecnológica) do Instituto Oceanográfico da Universidade de São Paulo’ propõe consultar acervos científicos, textuais, administrativos e visuais, além dos diários de bordo e de navegação do N/Oc Prof. Wladimir Besnard. O material serviria à elaboração de roteiros, filmagem e transcrição de depoimentos, com produção de livro e documentário em vídeo.",
     fontes: ["memoria-prceu"],
   },
   {
@@ -335,21 +335,6 @@ export default function Legado() {
                 não cabem dentro de um casco. Elas continuam em pessoas,
                 coleções, objetos, instituições, políticas, novas embarcações e
                 perguntas que ainda podem ser feitas aos dados do passado.
-              </p>
-            </div>
-
-            <div className="rounded-[2rem] border border-white/15 bg-white/[0.07] p-7 shadow-2xl backdrop-blur-xl">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-200">
-                Tese desta página
-              </p>
-              <p className="mt-4 text-2xl font-black leading-tight text-white">
-                O Besnard foi um elo.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-300">
-                Entre uma oceanografia que ainda construía sua autonomia de
-                campo e uma instituição capaz de operar novas plataformas,
-                preservar grandes coleções, participar de programas globais e
-                formar gerações de pesquisadores do mar.
               </p>
             </div>
           </div>
@@ -761,45 +746,6 @@ export default function Legado() {
             </a>
           </div>
         </section>
-
-        {/* REFERÊNCIAS CENTRALIZADAS */}
-        <section className="mx-auto max-w-7xl px-6 pb-16">
-          <div className="flex flex-col gap-5 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-yellow-100">
-                Documentação
-              </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
-                Fontes, entrevistas e acervos em um só lugar
-              </h2>
-              <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-                Os links essenciais permanecem junto aos trechos em que são
-                usados. A relação completa foi centralizada na aba Referências,
-                evitando repetir dezenas de cartões no final desta página.
-              </p>
-            </div>
-            <a
-              href="/referencias"
-              className="shrink-0 rounded-2xl border border-yellow-100/20 bg-yellow-200/10 px-6 py-3 text-center font-black text-yellow-100 transition hover:bg-yellow-200/20"
-            >
-              Ver todas as referências →
-            </a>
-          </div>
-        </section>
-
-        <footer className="border-t border-white/10">
-          <div className="mx-auto max-w-7xl px-6 py-12">
-            <p className="max-w-5xl text-2xl font-black leading-tight text-white md:text-3xl">
-              Um casco pode ser perdido. Uma comunidade científica pode escolher
-              não perder a memória, os dados e a capacidade que construiu a
-              partir dele.
-            </p>
-            <p className="mt-4 text-sm text-slate-500">
-              Memorial do N/Oc Prof. Wladimir Besnard • Legado • versão de
-              trabalho atualizada em agosto de 2026
-            </p>
-          </div>
-        </footer>
       </div>
     </main>
   );

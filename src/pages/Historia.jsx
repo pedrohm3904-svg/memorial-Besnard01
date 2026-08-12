@@ -880,55 +880,6 @@ export default function Historia() {
             </div>
           </div>
         </section>
-
-        {/* REFERÊNCIAS CENTRALIZADAS */}
-        <section className="mx-auto max-w-7xl px-6 pb-16">
-          <div className="flex flex-col gap-5 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-                Transparência documental
-              </p>
-              <h2 className="mt-2 text-2xl font-black text-white">
-                A documentação completa está reunida em Referências
-              </h2>
-              <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-                Ao longo da cronologia permanecem os links diretamente ligados
-                a cada episódio. A lista completa de documentos oficiais,
-                reportagens, pesquisas históricas e registros institucionais
-                foi centralizada em uma única página para evitar repetição.
-              </p>
-            </div>
-            <a
-              href="/referencias"
-              className="shrink-0 rounded-2xl border border-cyan-200/20 bg-cyan-300/10 px-6 py-3 text-center font-black text-cyan-100 transition hover:bg-cyan-300/20"
-            >
-              Ver todas as referências →
-            </a>
-          </div>
-        </section>
-
-        {/* ENCERRAMENTO */}
-        <footer className="border-t border-white/10">
-          <div className="mx-auto max-w-7xl px-6 py-14">
-            <div className="rounded-[2rem] border border-cyan-200/15 bg-gradient-to-r from-cyan-300/10 via-emerald-300/[0.07] to-yellow-200/[0.06] p-7 md:p-10">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
-                Memorial N/Oc Prof. Wladimir Besnard
-              </p>
-              <p className="mt-4 max-w-4xl text-2xl font-black leading-tight text-white md:text-3xl">
-                Preservar o Besnard não significa apenas preservar um casco.
-                Significa preservar as relações entre pessoas, instituições,
-                instrumentos, viagens, decisões e conhecimentos que fizeram do
-                oceano um campo de investigação científica no Brasil.
-              </p>
-              <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-400">
-                Atualização documental: 11 de agosto de 2026. O destino final
-                da embarcação permanece em aberto; por isso, o último capítulo
-                continuará sendo atualizado conforme decisões técnicas,
-                marítimas e administrativas forem oficialmente divulgadas.
-              </p>
-            </div>
-          </div>
-        </footer>
       </div>
     </main>
   );

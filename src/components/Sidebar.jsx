@@ -75,7 +75,7 @@ export default function Sidebar() {
 
               {!collapsed && (
                 <img
-                  src="C:/Users/pedro/Pictures/SEAlegre_Logo.png"
+                  src="/imagens/SEAlegre_Logo.png"
                   alt="SEAlegre"
                   className="h-10 w-10 rounded-full bg-white"
                 />

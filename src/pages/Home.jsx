@@ -8,9 +8,7 @@ const caminhos = [
     subtitulo: "Do projeto naval ao destino do casco",
     texto:
       "Acompanhe a construção, a chegada ao Brasil, as campanhas antárticas, o incêndio, as tentativas de preservação e a história ainda aberta do Besnard.",
-    href: "/historia",
     cor: "cyan",
-    chamada: "Percorrer a história",
   },
   {
     numero: "02",
@@ -18,9 +16,7 @@ const caminhos = [
     subtitulo: "Do navio ao conhecimento",
     texto:
       "Entenda o que foram VIKINDIO, GEDIP, REMAC, PROANTAR, REVIZEE, DEPROAS, ECOSAN e outros programas — e explore o catálogo histórico de cruzeiros.",
-    href: "/ciencia",
     cor: "emerald",
-    chamada: "Explorar a ciência",
   },
   {
     numero: "03",
@@ -28,9 +24,7 @@ const caminhos = [
     subtitulo: "O que permanece depois do navio",
     texto:
       "Pessoas, amostras, objetos, políticas científicas, memória audiovisual e novas embarcações mostram por que o Besnard foi um elo, não um ponto final.",
-    href: "/legado",
     cor: "yellow",
-    chamada: "Conhecer o legado",
   },
 ];
 
@@ -53,53 +47,32 @@ const numeros = [
   },
 ];
 
-const atalhos = [
-  ["Expedições", "/expedicoes"],
-  ["Galeria", "/galeria"],
-  ["Referências", "/referencias"],
-  ["Sobre o Memorial", "/sobre"],
-];
 
 function CaminhoCard({ item }) {
   const estilos = {
     cyan: {
-      borda: "border-cyan-200/20 hover:border-cyan-200/45",
-      fundo: "hover:bg-cyan-300/[0.08]",
+      borda: "border-cyan-200/20",
       numero: "text-cyan-200",
-      tag: "border-cyan-200/15 bg-cyan-300/10 text-cyan-100",
-      link: "text-cyan-200",
     },
     emerald: {
-      borda: "border-emerald-200/20 hover:border-emerald-200/45",
-      fundo: "hover:bg-emerald-300/[0.08]",
+      borda: "border-emerald-200/20",
       numero: "text-emerald-200",
-      tag: "border-emerald-200/15 bg-emerald-300/10 text-emerald-100",
-      link: "text-emerald-200",
     },
     yellow: {
-      borda: "border-yellow-100/20 hover:border-yellow-100/45",
-      fundo: "hover:bg-yellow-200/[0.08]",
+      borda: "border-yellow-100/20",
       numero: "text-yellow-100",
-      tag: "border-yellow-100/15 bg-yellow-200/10 text-yellow-100",
-      link: "text-yellow-100",
     },
   };
 
   const estilo = estilos[item.cor];
 
   return (
-    <a
-      href={item.href}
-      className={`group flex h-full flex-col rounded-[2rem] border bg-white/[0.045] p-7 backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${estilo.borda} ${estilo.fundo}`}
+    <article
+      className={`flex h-full flex-col rounded-[2rem] border bg-white/[0.045] p-7 backdrop-blur-xl ${estilo.borda}`}
     >
       <div className="flex items-start justify-between gap-4">
         <span className={`text-sm font-black ${estilo.numero}`}>
           {item.numero}
-        </span>
-        <span
-          className={`rounded-full border px-3 py-1 text-xs font-bold ${estilo.tag}`}
-        >
-          explorar
         </span>
       </div>
 
@@ -111,13 +84,7 @@ function CaminhoCard({ item }) {
       <p className="mt-5 flex-1 text-sm leading-7 text-slate-400">
         {item.texto}
       </p>
-
-      <p
-        className={`mt-7 text-sm font-black transition group-hover:translate-x-1 ${estilo.link}`}
-      >
-        {item.chamada} →
-      </p>
-    </a>
+    </article>
   );
 }
 
@@ -151,22 +118,6 @@ export default function Home() {
             formação e cooperação científica. Este memorial reúne sua história,
             a ciência feita a bordo e o que permaneceu depois dele.
           </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="/historia"
-              className="rounded-2xl bg-gradient-to-r from-cyan-300 to-emerald-300 px-6 py-3.5 font-black text-slate-950 transition hover:scale-[1.02]"
-            >
-              Começar pela história
-            </a>
-
-            <a
-              href="/ciencia"
-              className="rounded-2xl border border-white/15 bg-white/[0.07] px-6 py-3.5 font-black text-white transition hover:bg-white/[0.12]"
-            >
-              Explorar a ciência
-            </a>
-          </div>
         </div>
 
         <figure className="group relative min-h-[430px] overflow-hidden rounded-[2.25rem] border border-white/15 bg-white/[0.05] shadow-2xl md:min-h-[540px]">
@@ -244,14 +195,14 @@ export default function Home() {
       <section className="pb-16 md:pb-20">
         <div className="max-w-4xl">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-200">
-            Escolha um caminho
+            Três dimensões
           </p>
           <h2 className="mt-3 text-4xl font-black text-white md:text-5xl">
-            Três maneiras de explorar o Besnard
+            Três dimensões para compreender o Besnard
           </h2>
           <p className="mt-5 max-w-3xl leading-7 text-slate-400">
-            As páginas principais foram separadas para evitar repetir a mesma
-            narrativa em lugares diferentes.
+            História, ciência e legado aparecem aqui como três dimensões do mesmo
+            patrimônio, enquanto a navegação entre páginas fica concentrada na sidebar.
           </p>
         </div>
 
@@ -337,21 +288,6 @@ export default function Home() {
               Enviar contribuição ↗
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* NAVEGAÇÃO SECUNDÁRIA */}
-      <section className="pb-16">
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-8">
-          {atalhos.map(([nome, href]) => (
-            <a
-              key={href}
-              href={href}
-              className="text-sm font-bold text-slate-500 transition hover:text-cyan-200"
-            >
-              {nome} →
-            </a>
-          ))}
         </div>
       </section>
     </>

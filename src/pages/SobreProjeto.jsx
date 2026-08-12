@@ -23,13 +23,13 @@ export default function SobreProjeto() {
 
         <div className="rounded-[2rem] bg-slate-950/35 border border-white/20 p-6 text-center">
           <img
-            src="C:/Users/pedro/Pictures/SEAlegre_Logo.png"
+            src="/imagens/SEAlegre_Logo.png"
             alt="Logo do SEAlegre"
             className="w-44 h-44 object-contain mx-auto rounded-full bg-white"
           />
 
           <p className="mt-5 text-cyan-100 font-bold">
-            Extensão, ciência e comunidade
+            Projeto desenvolvido pelo SEAlegre, grupo de extensão universitária da Unifesp
           </p>
         </div>
       </div>

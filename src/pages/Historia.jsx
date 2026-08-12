@@ -490,7 +490,7 @@ const documentosProcurados = [
   },
 ];
 
-function FonteLink({ id, compacto = false }) {
+function FonteLink({ id }) {
   const fonte = fontes.find((item) => item.id === id);
   if (!fonte) return null;
 
@@ -499,39 +499,12 @@ function FonteLink({ id, compacto = false }) {
       href={fonte.url}
       target="_blank"
       rel="noreferrer"
-      className={
-        compacto
-          ? "inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-bold text-cyan-100 transition hover:-translate-y-0.5 hover:bg-cyan-300/20"
-          : "group rounded-2xl border border-white/10 bg-black/20 p-5 transition hover:-translate-y-1 hover:border-cyan-200/30 hover:bg-cyan-300/10"
-      }
+      title={fonte.titulo}
+      className="inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-bold text-cyan-100 transition hover:-translate-y-0.5 hover:bg-cyan-300/20"
     >
-      {compacto ? (
-        <>
-          <span className="h-1.5 w-1.5 rounded-full bg-cyan-200" />
-          {fonte.instituicao}
-          <span aria-hidden="true">↗</span>
-        </>
-      ) : (
-        <>
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">
-                {fonte.tipo}
-              </p>
-              <h3 className="mt-2 text-lg font-black text-white">
-                {fonte.instituicao}
-              </h3>
-            </div>
-            <span className="text-cyan-200 transition group-hover:translate-x-1 group-hover:-translate-y-1">
-              ↗
-            </span>
-          </div>
-          <p className="mt-2 font-bold text-slate-200">{fonte.titulo}</p>
-          <p className="mt-3 text-sm leading-relaxed text-slate-400">
-            {fonte.descricao}
-          </p>
-        </>
-      )}
+      <span className="h-1.5 w-1.5 rounded-full bg-cyan-200" />
+      {fonte.instituicao}
+      <span aria-hidden="true">↗</span>
     </a>
   );
 }
@@ -620,7 +593,7 @@ function Capitulo({ capitulo, indice }) {
 
             <div className="mt-7 flex flex-wrap gap-2">
               {capitulo.fontes.map((fonteId) => (
-                <FonteLink key={fonteId} id={fonteId} compacto />
+                <FonteLink key={fonteId} id={fonteId} />
               ))}
             </div>
           </div>
@@ -685,11 +658,9 @@ export default function Historia() {
                 Esta é uma história em construção
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-300">
-                As fontes são classificadas e linkadas ao longo do texto.
-                Documentos oficiais e registros contemporâneos recebem
-                prioridade. Fontes jornalísticas e memórias posteriores são
-                usadas para completar a narrativa, sempre evitando apresentar
-                hipótese como fato comprovado.
+                A narrativa é atualizada quando surgem novos documentos.
+                Divergências entre fontes e lacunas ainda não resolvidas são
+                indicadas no próprio texto, em vez de serem escondidas.
               </p>
               <div className="mt-5 rounded-2xl border border-cyan-200/15 bg-black/20 p-4">
                 <p className="text-sm font-bold text-cyan-100">
@@ -734,31 +705,29 @@ export default function Historia() {
           </div>
         </section>
 
-        {/* CORREÇÃO HISTÓRICA */}
+        {/* CONSTRUÇÃO EM CONTEXTO */}
         <section className="mx-auto max-w-7xl px-6 pb-12">
           <div className="grid gap-6 rounded-[2rem] border border-cyan-200/20 bg-gradient-to-br from-cyan-300/10 via-white/[0.05] to-emerald-300/[0.08] p-7 md:grid-cols-[0.35fr_1.65fr] md:p-9">
             <div>
-              <p className="text-5xl font-black text-cyan-200">1967</p>
+              <p className="text-5xl font-black text-cyan-200">1964–1967</p>
               <p className="mt-2 text-sm font-black uppercase tracking-[0.16em] text-slate-400">
-                não 1950
+                construção do navio
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-white">
-                Uma correção importante para o memorial
+                Um projeto brasileiro construído na Noruega
               </h2>
               <p className="mt-4 leading-7 text-slate-200">
-                O navio não foi construído em 1950. Esse ano pertence à
-                trajetória inicial do Instituto e de Wladimir Besnard, não à
-                construção da embarcação. As negociações para o navio próprio
-                ganharam impulso no final da década de 1950; o contrato de
-                construção foi assinado em abril de 1964; o casco foi lançado
-                em 1966; e a embarcação foi concluída, batizada e incorporada
-                à vida científica em 1967.
+                O contrato de construção foi assinado em abril de 1964 com o
+                estaleiro A/S Mjellem Karlsen, em Bergen. O casco foi lançado ao
+                mar em 18 de agosto de 1966 e a embarcação concluída e batizada
+                em maio de 1967. O projeto teve participação decisiva da Escola
+                Politécnica da USP e da nascente engenharia naval brasileira.
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
-                <FonteLink id="fapesp-memoria" compacto />
-                <FonteLink id="engenharia-naval" compacto />
+                <FonteLink id="fapesp-memoria" />
+                <FonteLink id="engenharia-naval" />
               </div>
             </div>
           </div>
@@ -912,33 +881,29 @@ export default function Historia() {
           </div>
         </section>
 
-        {/* FONTES */}
-        <section
-          id="fontes-historia"
-          className="border-t border-white/10 bg-black/15"
-        >
-          <div className="mx-auto max-w-7xl px-6 py-16">
-            <div className="max-w-4xl">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">
+        {/* REFERÊNCIAS CENTRALIZADAS */}
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <div className="flex flex-col gap-5 rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
                 Transparência documental
               </p>
-              <h2 className="mt-3 text-4xl font-black text-white md:text-5xl">
-                Fontes utilizadas nesta reconstrução
+              <h2 className="mt-2 text-2xl font-black text-white">
+                A documentação completa está reunida em Referências
               </h2>
-              <p className="mt-5 leading-7 text-slate-300">
-                Os links abaixo fazem parte da própria narrativa. Algumas
-                páginas históricas do IOUSP são antigas e podem apresentar
-                instabilidade; por isso, o ideal é futuramente preservar
-                também cópias autorizadas, referências bibliográficas e
-                registros em serviços de arquivamento da web.
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
+                Ao longo da cronologia permanecem os links diretamente ligados
+                a cada episódio. A lista completa de documentos oficiais,
+                reportagens, pesquisas históricas e registros institucionais
+                foi centralizada em uma única página para evitar repetição.
               </p>
             </div>
-
-            <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {fontes.map((fonte) => (
-                <FonteLink key={fonte.id} id={fonte.id} />
-              ))}
-            </div>
+            <a
+              href="/referencias"
+              className="shrink-0 rounded-2xl border border-cyan-200/20 bg-cyan-300/10 px-6 py-3 text-center font-black text-cyan-100 transition hover:bg-cyan-300/20"
+            >
+              Ver todas as referências →
+            </a>
           </div>
         </section>
 
@@ -956,10 +921,10 @@ export default function Historia() {
                 oceano um campo de investigação científica no Brasil.
               </p>
               <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-400">
-                Versão histórica atualizada em 11 de agosto de 2026. O capítulo
-                final permanece provisório enquanto estiverem em andamento os
-                procedimentos técnicos, marítimos e administrativos relativos
-                ao futuro da embarcação.
+                Atualização documental: 11 de agosto de 2026. O destino final
+                da embarcação permanece em aberto; por isso, o último capítulo
+                continuará sendo atualizado conforme decisões técnicas,
+                marítimas e administrativas forem oficialmente divulgadas.
               </p>
             </div>
           </div>

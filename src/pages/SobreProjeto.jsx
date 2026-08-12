@@ -23,7 +23,7 @@ export default function SobreProjeto() {
 
         <div className="rounded-[2rem] bg-slate-950/35 border border-white/20 p-6 text-center">
           <img
-            src="/imagens/sealegre-logo.png"
+            src="/Downloads/SEAlegre_Logo.png"
             alt="Logo do SEAlegre"
             className="w-44 h-44 object-contain mx-auto rounded-full bg-white"
           />

@@ -66,19 +66,11 @@ export default function Sidebar() {
         <div className="p-6">
           <Link to="/" onClick={() => setMobileOpen(false)}>
             <div className="flex items-center gap-3">
-              <img
-                src="/imagens/unifesp-logo.png"
-                alt="UNIFESP"
-                className="h-10 w-auto bg-white rounded-lg px-1"
-              />
-
-              {!collapsed && (
                 <img
                   src="/imagens/SEAlegre_Logo.png"
                   alt="SEAlegre"
                   className="h-10 w-10 rounded-full bg-white"
                 />
-              )}
             </div>
 
             {!collapsed && (
